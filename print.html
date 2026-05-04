@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code — Pharmacie Fontaine Michalon</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            gap: 20px;
+        }
+
+        .qr-card {
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 8px 48px rgba(0,0,0,0.11);
+            padding: 42px 36px 36px;
+            text-align: center;
+            max-width: 380px;
+            width: 100%;
+        }
+
+        /* Logo + titre */
+        .card-header { margin-bottom: 28px; }
+
+        .logo-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 14px;
+        }
+
+        .pharmatomic-logo {
+            height: 44px;
+            object-fit: contain;
+        }
+
+        .logo-sep {
+            width: 1px;
+            height: 36px;
+            background: #e2e8f0;
+        }
+
+        .cross-svg {
+            width: 42px;
+            height: 42px;
+            filter: drop-shadow(0 2px 4px rgba(0,166,81,.2));
+        }
+
+        .pharmacy-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #1e293b;
+            line-height: 1.2;
+        }
+
+        .groupement-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 7px;
+            padding: 3px 12px;
+            background: linear-gradient(135deg, #fdf0f7, #fce8f3);
+            border: 1px solid #f5c0e0;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #C8006A;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        /* QR Code */
+        .qr-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        #qrcode {
+            padding: 14px;
+            border: 3px solid #00A651;
+            border-radius: 18px;
+            background: #fff;
+            line-height: 0;
+        }
+
+        #qrcode img, #qrcode canvas {
+            border-radius: 8px;
+        }
+
+        /* CTA box */
+        .cta-box {
+            background: linear-gradient(135deg, #e8f8f0, #d0f0e2);
+            border-radius: 16px;
+            padding: 16px 18px;
+            margin-bottom: 22px;
+        }
+
+        .cta-box .cta-main {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #00A651;
+            margin-bottom: 4px;
+        }
+
+        .cta-box .cta-sub {
+            font-size: 0.78rem;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        /* Footer card */
+        .card-footer {
+            border-top: 1px solid #f1f5f9;
+            padding-top: 16px;
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+
+        .card-footer a {
+            color: #64748b;
+            text-decoration: none;
+        }
+
+        /* Bouton imprimer */
+        .print-btn {
+            padding: 13px 32px;
+            background: linear-gradient(135deg, #00A651, #007a3b);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0,166,81,.3);
+            transition: opacity 0.2s, transform 0.1s;
+        }
+
+        .print-btn:hover  { opacity: 0.92; }
+        .print-btn:active { transform: scale(0.97); }
+
+        .url-label {
+            margin-top: 10px;
+            font-size: 0.72rem;
+            color: #94a3b8;
+            font-family: monospace;
+        }
+
+        /* ── Print styles ── */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .qr-card {
+                box-shadow: none;
+                border: 1px solid #e2e8f0;
+                margin: 0 auto;
+            }
+            .print-btn,
+            .url-label { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="qr-card">
+        <div class="card-header">
+            <div class="logo-row">
+                <img src="pharmatomic-logo.png" alt="Pharmatomic" class="pharmatomic-logo"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='none'">
+                <div class="logo-sep"></div>
+                <svg class="cross-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="33" y="2"  width="34" height="96" rx="7" fill="#00A651"/>
+                    <rect x="2"  y="33" width="96" height="34" rx="7" fill="#00A651"/>
+                </svg>
+            </div>
+            <div class="pharmacy-title">Pharmacie<br>Fontaine Michalon</div>
+            <div class="groupement-badge">✦ Pharmatomic</div>
+        </div>
+
+        <div class="qr-wrapper">
+            <div id="qrcode"></div>
+        </div>
+
+        <div class="cta-box">
+            <div class="cta-main">📋 Envoyez votre ordonnance</div>
+            <div class="cta-sub">Scannez avec l'appareil photo de votre smartphone</div>
+        </div>
+
+        <div class="card-footer">
+            <a href="mailto:pharmacie.fontainemichalon@gmail.com">
+                pharmacie.fontainemichalon@gmail.com
+            </a>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">
+        🖨️&nbsp; Imprimer ce QR Code
+    </button>
+    <div class="url-label">https://blitobabo.github.io/ordo/</div>
+
+    <script>
+        new QRCode(document.getElementById("qrcode"), {
+            text: "https://blitobabo.github.io/ordo/",
+            width: 220,
+            height: 220,
+            colorDark:  "#00A651",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+
+</body>
+</html>
