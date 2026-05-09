@@ -349,6 +349,7 @@
             var base64 = await fileToBase64(file);
 
             var payload = {
+                token:       'pharmacie2024fontaine',
                 fileName:    file.name,
                 fileData:    base64,
                 mimeType:    file.type || 'application/octet-stream',
