@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#00A651">
-    <title>Pharmacie Fontaine Michalon — Envoyer mon ordonnance</title>
+    <title>Pharmacie Fontaine Michalon &mdash; Envoyer mon ordonnance</title>
     <style>
         :root {
             --green:       #00A651;
@@ -29,14 +29,13 @@
             color: var(--text);
         }
 
-        /* ── HEADER ── */
+        /* HEADER */
         header {
             background: #fff;
             border-bottom: 1px solid var(--border);
             padding: 22px 20px 18px;
             text-align: center;
         }
-
         .logo-row {
             display: flex;
             align-items: center;
@@ -44,307 +43,152 @@
             gap: 18px;
             margin-bottom: 12px;
         }
-
-        .pharmatomic-logo {
-            height: 50px;
-            object-fit: contain;
-        }
-
-        .logo-sep {
-            width: 1px;
-            height: 42px;
-            background: var(--border);
-        }
-
+        .pharmatomic-logo { height: 50px; object-fit: contain; }
+        .logo-sep { width: 1px; height: 42px; background: var(--border); }
         .cross-svg {
-            width: 46px;
-            height: 46px;
+            width: 46px; height: 46px;
             filter: drop-shadow(0 2px 5px rgba(0,166,81,.25));
         }
-
         .pharmacy-name {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--text);
-            letter-spacing: -0.3px;
+            font-size: 1.3rem; font-weight: 800;
+            color: var(--text); letter-spacing: -0.3px;
         }
-
         .groupement-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            margin-top: 7px;
-            padding: 3px 12px;
+            display: inline-flex; align-items: center; gap: 5px;
+            margin-top: 7px; padding: 3px 12px;
             background: linear-gradient(135deg, #fdf0f7, #fce8f3);
-            border: 1px solid #f5c0e0;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--pink);
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
+            border: 1px solid #f5c0e0; border-radius: 20px;
+            font-size: 0.7rem; font-weight: 700; color: var(--pink);
+            text-transform: uppercase; letter-spacing: 0.6px;
         }
 
-        /* ── MAIN ── */
-        main {
-            max-width: 480px;
-            margin: 0 auto;
-            padding: 28px 16px 48px;
-        }
+        /* MAIN */
+        main { max-width: 480px; margin: 0 auto; padding: 28px 16px 48px; }
+        .section-title { text-align: center; margin-bottom: 26px; }
+        .section-title h2 { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+        .section-title p  { font-size: 0.85rem; color: var(--text-light); margin-top: 5px; }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 26px;
-        }
-
-        .section-title h2 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text);
-        }
-
-        .section-title p {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            margin-top: 5px;
-        }
-
-        /* ── CARDS ── */
+        /* CARDS */
         .card {
-            background: #fff;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border: 2px solid transparent;
-            overflow: hidden;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            background: #fff; border-radius: var(--radius);
+            box-shadow: var(--shadow); border: 2px solid transparent;
+            overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s;
         }
-
         .card + .card { margin-top: 16px; }
-
         .card:hover { box-shadow: 0 8px 36px rgba(0,0,0,0.13); }
         .card.email:hover  { border-color: var(--blue); }
         .card.upload:hover { border-color: var(--green); }
 
         .card-btn {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            padding: 22px 20px;
-            width: 100%;
-            background: none;
-            border: none;
-            cursor: pointer;
-            text-align: left;
-            text-decoration: none;
-            color: inherit;
-            transition: background 0.15s;
+            display: flex; align-items: center; gap: 18px;
+            padding: 22px 20px; width: 100%; background: none; border: none;
+            cursor: pointer; text-align: left; text-decoration: none;
+            color: inherit; transition: background 0.15s;
         }
-
         .card-btn:active { background: #f8fafc; }
 
         .card-icon {
-            width: 58px;
-            height: 58px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            flex-shrink: 0;
+            width: 58px; height: 58px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 26px; flex-shrink: 0;
         }
-
         .icon-blue  { background: linear-gradient(135deg, #3b82f6, #2563eb); }
         .icon-green { background: linear-gradient(135deg, #00A651, #007a3b); }
 
-        .card-text h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-        }
-
-        .card-text p {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            margin-top: 3px;
-            line-height: 1.45;
-        }
+        .card-text h3 { font-size: 1.05rem; font-weight: 700; }
+        .card-text p  { font-size: 0.8rem; color: var(--text-light); margin-top: 3px; line-height: 1.45; }
 
         .card-chevron {
-            margin-left: auto;
-            color: #cbd5e1;
-            font-size: 1.6rem;
-            line-height: 1;
-            flex-shrink: 0;
+            margin-left: auto; color: #cbd5e1;
+            font-size: 1.6rem; line-height: 1; flex-shrink: 0;
             transition: transform 0.25s;
         }
-
         .card-chevron.open { transform: rotate(90deg); }
 
-        /* ── UPLOAD PANEL ── */
+        /* UPLOAD PANEL */
         .upload-panel {
-            max-height: 0;
-            overflow: hidden;
+            max-height: 0; overflow: hidden;
             transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1);
         }
-
         .upload-panel.open { max-height: 700px; }
 
-        .upload-inner {
-            border-top: 1px solid var(--border);
-            padding: 20px;
-        }
+        .upload-inner { border-top: 1px solid var(--border); padding: 20px; }
 
         .field-label {
-            display: block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            margin-bottom: 7px;
+            display: block; font-size: 0.75rem; font-weight: 700;
+            color: var(--text-light); text-transform: uppercase;
+            letter-spacing: 0.6px; margin-bottom: 7px;
         }
-
         .text-input {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1.5px solid var(--border);
-            border-radius: 10px;
-            font-size: 0.95rem;
-            color: var(--text);
-            outline: none;
-            transition: border-color 0.2s;
-            margin-bottom: 16px;
+            width: 100%; padding: 12px 14px;
+            border: 1.5px solid var(--border); border-radius: 10px;
+            font-size: 0.95rem; color: var(--text);
+            outline: none; transition: border-color 0.2s; margin-bottom: 16px;
         }
-
         .text-input:focus { border-color: var(--green); }
 
         .file-zone {
-            border: 2px dashed #cbd5e1;
-            border-radius: 14px;
-            padding: 28px 16px 24px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s;
-            background: #fafafa;
-            margin-bottom: 14px;
+            border: 2px dashed #cbd5e1; border-radius: 14px;
+            padding: 28px 16px 24px; text-align: center;
+            cursor: pointer; transition: all 0.2s;
+            background: #fafafa; margin-bottom: 14px;
         }
-
         .file-zone:hover, .file-zone.has-file {
-            border-color: var(--green);
-            background: var(--green-light);
+            border-color: var(--green); background: var(--green-light);
         }
-
         .zone-icon { font-size: 38px; margin-bottom: 10px; }
-
-        .file-zone p {
-            font-size: 0.83rem;
-            color: var(--text-light);
-        }
-
-        .file-zone .file-hint {
-            font-size: 0.72rem;
-            color: #94a3b8;
-            margin-top: 4px;
-        }
-
-        .file-name-display {
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: var(--green);
-            margin-top: 8px;
-        }
-
+        .file-zone p { font-size: 0.83rem; color: var(--text-light); }
+        .file-zone .file-hint { font-size: 0.72rem; color: #94a3b8; margin-top: 4px; }
+        .file-name-display { font-size: 0.88rem; font-weight: 600; color: var(--green); margin-top: 8px; }
         #fileInput { display: none; }
 
         .btn-primary {
-            width: 100%;
-            padding: 15px;
+            width: 100%; padding: 15px;
             background: linear-gradient(135deg, var(--green), var(--green-dark));
-            color: #fff;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: opacity 0.2s, transform 0.1s;
-            letter-spacing: 0.2px;
+            color: #fff; border: none; border-radius: 12px;
+            font-size: 1rem; font-weight: 700; cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s; letter-spacing: 0.2px;
         }
-
-        .btn-primary:active  { transform: scale(0.98); }
+        .btn-primary:active   { transform: scale(0.98); }
         .btn-primary:disabled { opacity: 0.38; cursor: not-allowed; }
 
         .btn-ghost {
-            width: 100%;
-            padding: 11px;
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 0.88rem;
-            cursor: pointer;
-            margin-top: 4px;
+            width: 100%; padding: 11px; background: none; border: none;
+            color: var(--text-light); font-size: 0.88rem; cursor: pointer; margin-top: 4px;
         }
 
-        /* ── SUCCESS PANEL ── */
+        /* SUCCESS PANEL */
         .success-panel {
-            display: none;
-            border-top: 1px solid var(--border);
-            padding: 30px 20px;
-            text-align: center;
+            display: none; border-top: 1px solid var(--border);
+            padding: 30px 20px; text-align: center;
         }
-
         .success-panel.visible { display: block; }
-
         .success-icon { font-size: 54px; margin-bottom: 12px; }
-
-        .success-panel h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--green);
-        }
-
-        .success-panel p {
-            font-size: 0.84rem;
-            color: var(--text-light);
-            margin-top: 7px;
-            line-height: 1.55;
-        }
-
+        .success-panel h3 { font-size: 1.15rem; font-weight: 700; color: var(--green); }
+        .success-panel p  { font-size: 0.84rem; color: var(--text-light); margin-top: 7px; line-height: 1.55; }
         .btn-reset {
-            margin-top: 18px;
-            padding: 10px 22px;
-            background: var(--green-light);
-            color: var(--green);
-            border: none;
-            border-radius: 10px;
-            font-size: 0.88rem;
-            font-weight: 700;
-            cursor: pointer;
+            margin-top: 18px; padding: 10px 22px;
+            background: var(--green-light); color: var(--green);
+            border: none; border-radius: 10px;
+            font-size: 0.88rem; font-weight: 700; cursor: pointer;
         }
 
-        /* ── LOADING OVERLAY ── */
+        /* LOADING BAR */
         .loading-bar {
-            display: none;
-            height: 3px;
+            display: none; height: 3px;
             background: linear-gradient(90deg, var(--green), #00e676, var(--green));
             background-size: 200% 100%;
             animation: shimmer 1.2s infinite linear;
-            border-radius: 3px;
-            margin-bottom: 14px;
+            border-radius: 3px; margin-bottom: 14px;
         }
-
         .loading-bar.visible { display: block; }
-
         @keyframes shimmer {
             0%   { background-position: 200% 0; }
             100% { background-position: -200% 0; }
         }
 
-        /* ── FOOTER ── */
-        footer {
-            text-align: center;
-            padding: 14px;
-            color: #94a3b8;
-            font-size: 0.73rem;
-        }
+        /* FOOTER */
+        footer { text-align: center; padding: 14px; color: #94a3b8; font-size: 0.73rem; }
     </style>
 </head>
 <body>
@@ -360,120 +204,113 @@
         </svg>
     </div>
     <div class="pharmacy-name">Pharmacie Fontaine Michalon</div>
-    <div class="groupement-badge">✦ Pharmatomic</div>
+    <div class="groupement-badge">&#10022; Pharmatomic</div>
 </header>
 
 <main>
     <div class="section-title">
         <h2>Envoyez votre ordonnance</h2>
-        <p>Choisissez la méthode qui vous convient</p>
+        <p>Choisissez la m&eacute;thode qui vous convient</p>
     </div>
 
-    <!-- ── Carte 1 : Email ── -->
+    <!-- Carte 1 : Email -->
     <div class="card email">
         <a class="card-btn"
            href="mailto:pharmacie.fontainemichalon@gmail.com?subject=Ordonnance%20-%20Pharmacie%20Fontaine%20Michalon&body=Bonjour%2C%0A%0AJe%20vous%20transmets%20mon%20ordonnance%20en%20pi%C3%A8ce%20jointe.%0A%0ACordialement%2C">
-            <div class="card-icon icon-blue">✉️</div>
+            <div class="card-icon icon-blue">&#x2709;&#xFE0F;</div>
             <div class="card-text">
                 <h3>Envoyer par email</h3>
-                <p>Ouvre votre application mail avec notre adresse préremplie</p>
+                <p>Ouvre votre application mail avec notre adresse pr&eacute;remplie</p>
             </div>
-            <span class="card-chevron">›</span>
+            <span class="card-chevron">&#x203A;</span>
         </a>
     </div>
 
-    <!-- ── Carte 2 : Dépôt fichier ── -->
+    <!-- Carte 2 : Depot fichier -->
     <div class="card upload" id="uploadCard">
         <button class="card-btn" onclick="toggleUpload()" type="button">
-            <div class="card-icon icon-green">📋</div>
+            <div class="card-icon icon-green">&#x1F4CB;</div>
             <div class="card-text">
-                <h3>Déposer mon ordonnance</h3>
-                <p>Sélectionnez votre fichier — nous le recevons directement</p>
+                <h3>D&eacute;poser mon ordonnance</h3>
+                <p>S&eacute;lectionnez votre fichier &mdash; nous le recevons directement</p>
             </div>
-            <span class="card-chevron" id="chevron">›</span>
+            <span class="card-chevron" id="chevron">&#x203A;</span>
         </button>
 
-        <!-- Panel de dépôt -->
+        <!-- Panel de depot -->
         <div class="upload-panel" id="uploadPanel">
             <div class="upload-inner">
                 <div class="loading-bar" id="loadingBar"></div>
 
-                <form id="uploadForm">
-                    <!-- Champs cachés Formsubmit -->
-                    <input type="hidden" name="_subject"
-                           value="📋 Nouvelle ordonnance — Pharmacie Fontaine Michalon">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
+                <label class="field-label" for="patientName">Votre nom (optionnel)</label>
+                <input class="text-input" type="text" id="patientName"
+                       placeholder="Ex : Jean Dupont">
 
-                    <!-- Nom patient (optionnel) -->
-                    <label class="field-label" for="patientName">Votre nom (optionnel)</label>
-                    <input class="text-input" type="text" id="patientName"
-                           name="Nom du patient" placeholder="Ex : Jean Dupont">
+                <div class="file-zone" id="fileZone"
+                     onclick="document.getElementById('fileInput').click()">
+                    <div class="zone-icon">&#x1F4CE;</div>
+                    <p>Appuyez ici pour s&eacute;lectionner votre ordonnance</p>
+                    <p class="file-hint">Photo, PDF, JPG, PNG accept&eacute;s</p>
+                    <div class="file-name-display" id="fileNameDisplay"></div>
+                </div>
+                <input type="file" id="fileInput" accept="image/*,.pdf">
 
-                    <!-- Zone de fichier -->
-                    <div class="file-zone" id="fileZone"
-                         onclick="document.getElementById('fileInput').click()">
-                        <div class="zone-icon">📎</div>
-                        <p>Appuyez ici pour sélectionner votre ordonnance</p>
-                        <p class="file-hint">Photo, PDF, JPG, PNG acceptés</p>
-                        <div class="file-name-display" id="fileNameDisplay"></div>
-                    </div>
-                    <input type="file" id="fileInput" name="Ordonnance"
-                           accept="image/*,.pdf">
-
-                    <button type="button" class="btn-primary" id="btnSend"
-                            disabled onclick="submitForm()">
-                        📤&nbsp; Envoyer mon ordonnance
-                    </button>
-                    <button type="button" class="btn-ghost" onclick="toggleUpload()">
-                        Annuler
-                    </button>
-                </form>
+                <button type="button" class="btn-primary" id="btnSend"
+                        disabled onclick="submitForm()">
+                    &#x1F4E4;&nbsp; Envoyer mon ordonnance
+                </button>
+                <button type="button" class="btn-ghost" onclick="toggleUpload()">
+                    Annuler
+                </button>
             </div>
         </div>
 
-        <!-- Panel succès -->
+        <!-- Panel succes -->
         <div class="success-panel" id="successPanel">
-            <div class="success-icon">✅</div>
-            <h3>Ordonnance bien reçue !</h3>
-            <p>Votre ordonnance a été transmise à notre équipe.<br>
+            <div class="success-icon">&#x2705;</div>
+            <h3>Ordonnance bien re&ccedil;ue !</h3>
+            <p>Votre ordonnance a &eacute;t&eacute; transmise &agrave; notre &eacute;quipe.<br>
                Nous vous contacterons rapidement.</p>
             <button class="btn-reset" onclick="resetForm()">
-                ↩ Envoyer une autre ordonnance
+                &#x21A9; Envoyer une autre ordonnance
             </button>
         </div>
     </div>
 </main>
 
 <footer>
-    Pharmacie Fontaine Michalon · Membre Pharmatomic
+    Pharmacie Fontaine Michalon &middot; Membre Pharmatomic
 </footer>
 
 <script>
-    /* ── Toggle panneau upload ── */
+    // =====================================================
+    // COLLEZ ICI L'URL DE VOTRE GOOGLE APPS SCRIPT
+    // Exemple : https://script.google.com/macros/s/ABC.../exec
+    // =====================================================
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwzsmonXQNSGOeqeZVCHD6EmQvp2mJRLVOkqYdtD90tJ2LPUfwZEXMlaaLLJSr7yZTa/exec';
+
+    // --- Toggle panneau upload ---
     let uploadOpen = false;
 
     function toggleUpload() {
         uploadOpen = !uploadOpen;
         document.getElementById('uploadPanel').classList.toggle('open', uploadOpen);
-        const ch = document.getElementById('chevron');
+        var ch = document.getElementById('chevron');
         ch.classList.toggle('open', uploadOpen);
-        ch.textContent = '›';
         if (uploadOpen) {
-            setTimeout(() => {
+            setTimeout(function() {
                 document.getElementById('uploadPanel')
                     .scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }, 60);
         }
     }
 
-    /* ── Sélection du fichier ── */
-    document.getElementById('fileInput').addEventListener('change', function () {
-        const file = this.files[0];
-        const display = document.getElementById('fileNameDisplay');
-        const zone    = document.getElementById('fileZone');
-        const btn     = document.getElementById('btnSend');
-
+    // --- Selection du fichier ---
+    document.getElementById('fileInput').addEventListener('change', function() {
+        var file    = this.files[0];
+        var display = document.getElementById('fileNameDisplay');
+        var zone    = document.getElementById('fileZone');
+        var btn     = document.getElementById('btnSend');
         if (file) {
             display.textContent = '📄 ' + file.name;
             zone.classList.add('has-file');
@@ -485,53 +322,75 @@
         }
     });
 
-    /* ── Envoi via Formsubmit (AJAX) ── */
-    async function submitForm() {
-        const btn     = document.getElementById('btnSend');
-        const loading = document.getElementById('loadingBar');
-        const form    = document.getElementById('uploadForm');
+    // --- Conversion fichier -> base64 ---
+    function fileToBase64(file) {
+        return new Promise(function(resolve, reject) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload  = function() { resolve(reader.result.split(',')[1]); };
+            reader.onerror = reject;
+        });
+    }
 
-        btn.textContent = '⏳  Envoi en cours…';
+    // --- Envoi via Google Apps Script ---
+    async function submitForm() {
+        var btn     = document.getElementById('btnSend');
+        var loading = document.getElementById('loadingBar');
+        var file    = document.getElementById('fileInput').files[0];
+        var name    = document.getElementById('patientName').value.trim();
+
+        if (!file) return;
+
+        btn.textContent = 'Envoi en cours...';
         btn.disabled    = true;
         loading.classList.add('visible');
 
-        const data = new FormData(form);
-
         try {
-            const res  = await fetch(
-                'https://formsubmit.co/ajax/pharmacie.fontainemichalon@gmail.com',
-                { method: 'POST', body: data }
-            );
-            const json = await res.json();
+            var base64 = await fileToBase64(file);
 
-            if (json.success === 'true' || json.success === true) {
+            var payload = {
+                fileName:    file.name,
+                fileData:    base64,
+                mimeType:    file.type || 'application/octet-stream',
+                patientName: name || 'Non renseigne'
+            };
+
+            var res  = await fetch(APPS_SCRIPT_URL, {
+                method:   'POST',
+                redirect: 'follow',
+                headers:  { 'Content-Type': 'application/json' },
+                body:     JSON.stringify(payload)
+            });
+
+            var json = await res.json();
+
+            if (json.success) {
                 document.getElementById('uploadPanel').classList.remove('open');
                 uploadOpen = false;
                 document.getElementById('chevron').classList.remove('open');
-
-                const success = document.getElementById('successPanel');
+                var success = document.getElementById('successPanel');
                 success.classList.add('visible');
                 success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } else {
-                throw new Error('Formsubmit error');
+                throw new Error(json.error || 'Erreur serveur');
             }
         } catch (e) {
-            alert('Une erreur est survenue. Vérifiez votre connexion et réessayez, '
-                + 'ou envoyez votre ordonnance par email.');
-            btn.textContent = '📤  Envoyer mon ordonnance';
+            alert('Une erreur est survenue. Verifiez votre connexion et reessayez, ou envoyez votre ordonnance par email.');
+            btn.textContent = 'Envoyer mon ordonnance';
             btn.disabled    = false;
         } finally {
             loading.classList.remove('visible');
         }
     }
 
-    /* ── Réinitialisation ── */
+    // --- Reinitialisation ---
     function resetForm() {
-        document.getElementById('uploadForm').reset();
+        document.getElementById('fileInput').value = '';
+        document.getElementById('patientName').value = '';
         document.getElementById('fileNameDisplay').textContent = '';
         document.getElementById('fileZone').classList.remove('has-file');
         document.getElementById('btnSend').disabled    = true;
-        document.getElementById('btnSend').textContent = '📤  Envoyer mon ordonnance';
+        document.getElementById('btnSend').textContent = 'Envoyer mon ordonnance';
         document.getElementById('successPanel').classList.remove('visible');
         uploadOpen = false;
     }
