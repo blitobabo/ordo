@@ -356,24 +356,19 @@
                 patientName: name || 'Non renseigne'
             };
 
-            var res  = await fetch(APPS_SCRIPT_URL, {
-                method:   'POST',
-                redirect: 'follow',
-                body:     JSON.stringify(payload)
+            await fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                mode:   'no-cors',
+                body:   JSON.stringify(payload)
             });
 
-            var json = await res.json();
-
-            if (json.success) {
-                document.getElementById('uploadPanel').classList.remove('open');
-                uploadOpen = false;
-                document.getElementById('chevron').classList.remove('open');
-                var success = document.getElementById('successPanel');
-                success.classList.add('visible');
-                success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            } else {
-                throw new Error(json.error || 'Erreur serveur');
-            }
+            // no-cors : on ne peut pas lire la reponse, on affiche le succes
+            document.getElementById('uploadPanel').classList.remove('open');
+            uploadOpen = false;
+            document.getElementById('chevron').classList.remove('open');
+            var success = document.getElementById('successPanel');
+            success.classList.add('visible');
+            success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         } catch (e) {
             alert('Une erreur est survenue. Verifiez votre connexion et reessayez, ou envoyez votre ordonnance par email.');
             btn.textContent = 'Envoyer mon ordonnance';
